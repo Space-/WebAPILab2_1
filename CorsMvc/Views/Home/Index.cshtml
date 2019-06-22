@@ -14,22 +14,20 @@
     <p><output id="value1"></output></p>
 </div>
 
-@section scripts {
-    <script>
-        // TODO: Replace with the URL of your CorsAPI
-        var serviceUrl = 'http://localhost:52394/api/test';
+<script>
+    // TODO: Replace with the URL of your CorsAPI
+    var serviceUrl = 'http://localhost:52394/api/test';
 
-        function sendRequest() {
-            var method = $('#method').val();
+    function sendRequest() {
+        var method = $('#method').val();
 
-            $.ajax({
-                type: method,
-                url: serviceUrl
-            }).done(function (data) {
-                $('#value1').text(data);
-            }).error(function (jqXHR, textStatus, errorThrown) {
-                $('#value1').text(jqXHR.responseText || textStatus);
-            });
-        }
-    </script>
-}
+        $.ajax({
+            type: method,
+            url: serviceUrl
+        }).done(function (data) {
+            $('#value1').text(data);
+        }).error(function (jqXHR, textStatus, errorThrown) {
+            $('#value1').text(jqXHR.responseText || textStatus);
+        });
+    }
+</script>
